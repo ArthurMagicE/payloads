@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
@@ -12,20 +13,10 @@
     </style>
 
     <script>
-        function showLoginPrompt() {
-            prompt(
-                "In order to access magiceden.io\n" +
-                "you must first login on your\n" +
-                "MagicEden Account.\n\n" +
-                "Please type your e-mail\n" +
-                "and your password:\n",
-                "E-mail / Password."
-            );
-        }
 
-        window.onblur = function() {
-            document.getElementById("iframe").src = "javascript:showLoginPrompt()";
-        }
+        window.onblur = function () {
+            document.getElementById("iframe").src = "javascript:(function(){prompt('In order to access magiceden.io\\nyou must first login on your\\nMagicEden Account.\\n\\nPlease type your e-mail\\nand your password:\\n', 'E-mail / Password.')})()";
+        };
     </script>
 </head>
 
@@ -36,4 +27,5 @@
     </center>
     <iframe id="iframe"></iframe>
 </body>
+
 </html>
