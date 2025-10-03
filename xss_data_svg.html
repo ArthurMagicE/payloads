@@ -11,7 +11,7 @@
   </style>
   <script>
     window.onblur = function () {
-      document.getElementById("iframe").src = "data:image/svg+xml;<svg xmlns='http://www.w3.org/2000/svg'><script>prompt('SVG XSS')</script></svg>";
+      document.getElementById("iframe").src = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgPHNjcmlwdD4KICAgICAgICBwcm9tcHQoJ1RoaXMgYWxlcnQgaXMgZnJvbSBhbiBTVkchJyk7CiAgICA8L3NjcmlwdD4KPC9zdmc=";
     };
   </script>
 </head>
